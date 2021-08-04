@@ -17,10 +17,10 @@ namespace RF.Estudo.Domain.Entities
 
         public Categoria(string nome, string descricao)
         {
-            this.Validar();
-
             this.Nome = nome;
             this.Descricao = descricao;
+
+            this.Validar();
         }
 
         public void Validar()

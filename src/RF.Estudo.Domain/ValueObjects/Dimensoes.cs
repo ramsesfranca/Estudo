@@ -10,11 +10,11 @@ namespace RF.Estudo.Domain.ValueObjects
 
         public Dimensoes(decimal altura, decimal largura, decimal profundidade)
         {
-            this.Validar();
-
             this.Altura = altura;
             this.Largura = largura;
             this.Profundidade = profundidade;
+
+            this.Validar();
         }
 
         public string DescricaoFormatada()

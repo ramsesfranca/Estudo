@@ -23,15 +23,19 @@ namespace RF.Estudo.Domain.Entities
 
         public Produto(string nome, string descricao, decimal valor, Dimensoes dimensoes, bool situacao, Categoria categoria)
         {
-            this.Validar();
-
             this.Nome = nome;
             this.Descricao = descricao;
             this.Valor = valor;
             this.Dimensoes = dimensoes;
             this.Situacao = situacao;
-            this.CategoriaId = categoria.Id;
-            this.Categoria = categoria;
+
+            if (categoria != null)
+            {
+                this.CategoriaId = categoria.Id;
+                this.Categoria = categoria;
+            }
+
+            this.Validar();
         }
 
         public void AdicionarCategoria(Categoria categoria)
@@ -73,7 +77,7 @@ namespace RF.Estudo.Domain.Entities
             Validacoes.ValidarSeVazio(this.Nome, "O campo Nome do produto não pode estar vazio");
             Validacoes.ValidarSeVazio(this.Descricao, "O campo Descricao do produto não pode estar vazio");
             Validacoes.ValidarSeMenorQue(this.Valor, 1, "O campo Valor do produto não pode se menor igual a 0");
-            Validacoes.ValidarSeIgual(this.CategoriaId, Guid.Empty, "O campo CategoriaId do produto não pode estar vazio");
+            Validacoes.ValidarSeIgual(this.Categoria, null, "A Categoria do produto não pode estar vazio");
         }
     }
 }
