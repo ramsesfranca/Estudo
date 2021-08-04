@@ -11,8 +11,9 @@ namespace RF.Estudo.Infrastructure.Mappings
             builder.ToTable("Produtos");
 
             builder.HasKey(p => p.Id);
-            builder.Property(p => p.Nome).IsRequired().HasColumnType("varchar(250)");
-            builder.Property(p => p.Descricao).IsRequired().HasColumnType("varchar(500)");
+
+            builder.Property(p => p.Nome).HasMaxLength(250).IsUnicode(false).IsRequired();
+            builder.Property(p => p.Descricao).HasMaxLength(500).IsUnicode(false).IsRequired();
             builder.OwnsOne(p => p.Dimensoes, cm =>
             {
                 cm.Property(d => d.Altura).HasColumnName("Altura").HasColumnType("int");
