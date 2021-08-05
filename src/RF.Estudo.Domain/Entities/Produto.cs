@@ -1,5 +1,6 @@
 ﻿using RF.Estudo.Domain.Core.DomainObjects;
 using RF.Estudo.Domain.Core.Exceptions;
+using RF.Estudo.Domain.Enums;
 using RF.Estudo.Domain.ValueObjects;
 using System;
 
@@ -11,7 +12,8 @@ namespace RF.Estudo.Domain.Entities
         public string Descricao { get; private set; }
         public decimal Valor { get; private set; }
         public int Quantidade { get; private set; }
-        public Dimensoes Dimensoes { get; set; }
+        public Dimensoes Dimensoes { get; private set; }
+        public TipoProduto TipoProduto { get; private set; }
         public bool Situacao { get; private set; }
         public Guid CategoriaId { get; private set; }
 
@@ -21,12 +23,13 @@ namespace RF.Estudo.Domain.Entities
         {
         }
 
-        public Produto(string nome, string descricao, decimal valor, Dimensoes dimensoes, bool situacao, Categoria categoria)
+        public Produto(string nome, string descricao, decimal valor, Dimensoes dimensoes, TipoProduto tipoProduto, bool situacao, Categoria categoria)
         {
             this.Nome = nome;
             this.Descricao = descricao;
             this.Valor = valor;
             this.Dimensoes = dimensoes;
+            this.TipoProduto = tipoProduto;
             this.Situacao = situacao;
 
             if (categoria != null)
