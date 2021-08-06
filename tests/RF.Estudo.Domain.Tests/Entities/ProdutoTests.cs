@@ -4,7 +4,7 @@ using RF.Estudo.Domain.Enums;
 using RF.Estudo.Domain.ValueObjects;
 using Xunit;
 
-namespace RF.Estudo.Domain.Tests
+namespace RF.Estudo.Domain.Tests.Entities
 {
     public class ProdutoTests
     {

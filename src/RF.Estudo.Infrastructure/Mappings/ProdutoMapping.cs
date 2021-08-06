@@ -1,12 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using RF.Estudo.Domain.Entities;
+using System;
 
 namespace RF.Estudo.Infrastructure.Mappings
 {
-    public class ProdutoMapping : IEntityTypeConfiguration<Produto>
+    public class ProdutoMapping : BaseMapping<Guid, Produto>
     {
-        public void Configure(EntityTypeBuilder<Produto> builder)
+        public override void Configure(EntityTypeBuilder<Produto> builder)
         {
             builder.ToTable("Produtos");
 

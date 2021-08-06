@@ -1,12 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using RF.Estudo.Domain.Entities;
+using System;
 
 namespace RF.Estudo.Infrastructure.Mappings
 {
-    public class CategoriaMapping : IEntityTypeConfiguration<Categoria>
+    public class CategoriaMapping : BaseMapping<Guid, Categoria>
     {
-        public void Configure(EntityTypeBuilder<Categoria> builder)
+        public override void Configure(EntityTypeBuilder<Categoria> builder)
         {
             builder.ToTable("Categorias");
 
