@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using RF.Estudo.MVC.Models;
 using System.Diagnostics;
 
@@ -7,12 +6,11 @@ namespace RF.Estudo.MVC.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
+        //private readonly ILogger<HomeController> _logger;
+        //public HomeController(ILogger<HomeController> logger)
+        //{
+        //    this._logger = logger;
+        //}
 
         public IActionResult Index()
         {

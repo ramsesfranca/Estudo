@@ -4,7 +4,7 @@ using System;
 
 namespace RF.Estudo.Domain.Interfaces.Repositorys
 {
-    public interface ICategoriaRepository : IBaseRepository<Guid, Produto>
+    public interface ICategoriaRepository : IBaseRepository<Guid, Categoria>
     {
     }
 }
