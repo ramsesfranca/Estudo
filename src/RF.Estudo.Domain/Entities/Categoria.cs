@@ -23,7 +23,7 @@ namespace RF.Estudo.Domain.Entities
             this.Validar();
         }
 
-        public void Validar()
+        private void Validar()
         {
             Validacoes.ValidarSeVazio(this.Nome, "O campo Nome da categoria não pode estar vazio");
             Validacoes.ValidarSeVazio(this.Descricao, "O campo Descrição da categoria não pode estar vazio");

@@ -9,9 +9,9 @@ namespace RF.Estudo.Infrastructure.Mappings
     {
         public override void Configure(EntityTypeBuilder<Categoria> builder)
         {
-            builder.ToTable("Categorias");
+            base.Configure(builder);
 
-            builder.HasKey(c => c.Id);
+            builder.ToTable("Categorias");
 
             builder.Property(c => c.Nome).HasMaxLength(250).IsUnicode(false).IsRequired();
             builder.Property(c => c.Descricao).HasMaxLength(500).IsUnicode(false).IsRequired();

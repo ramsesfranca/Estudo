@@ -13,7 +13,7 @@ namespace RF.Estudo.Infrastructure.Mappings
         {
             builder.HasKey(e => e.Id);
 
-            builder.Property(d => d.Id).IsRequired();
+            builder.Property(e => e.Id).IsRequired();
             builder.Property(e => e.DataHoraCadastro).IsRequired();
             builder.Property(e => e.DataHoraModificado);
         }

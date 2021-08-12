@@ -75,7 +75,7 @@ namespace RF.Estudo.Domain.Entities
             this.Quantidade -= quantidade;
         }
 
-        public void Validar()
+        private void Validar()
         {
             Validacoes.ValidarSeVazio(this.Nome, "O campo Nome do produto não pode estar vazio");
             Validacoes.ValidarSeVazio(this.Descricao, "O campo Descricao do produto não pode estar vazio");

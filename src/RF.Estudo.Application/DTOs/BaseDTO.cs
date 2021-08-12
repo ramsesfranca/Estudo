@@ -2,7 +2,7 @@
 
 namespace RF.Estudo.Application.DTOs
 {
-    public class BaseDTO<TId>
+    public abstract class BaseDTO<TId>
         where TId : IEquatable<TId>
     {
         public TId Id { get; set; }
