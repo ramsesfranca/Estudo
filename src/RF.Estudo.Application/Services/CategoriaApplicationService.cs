@@ -9,8 +9,8 @@ namespace RF.Estudo.Application.Services
 {
     public class CategoriaApplicationService : BaseApplicationService<Guid, Categoria, CategoriaDTO, ICategoriaService>, ICategoriaApplicationService
     {
-        public CategoriaApplicationService(IMapper mapper, ICategoriaService CategoriaService)
-            : base(mapper, CategoriaService)
+        public CategoriaApplicationService(IMapper mapper, ICategoriaService categoriaService)
+            : base(mapper, categoriaService)
         {
         }
     }
