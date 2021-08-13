@@ -40,7 +40,7 @@ namespace RF.Estudo.Domain.Services
             return await this._baseRepository.SelecionarPorId(id, propriedades);
         }
 
-        public virtual async Task<List<TEntidade>> SelecionarTodos(params string[] propriedades)
+        public virtual async Task<IEnumerable<TEntidade>> SelecionarTodos(params string[] propriedades)
         {
             return await this._baseRepository.SelecionarTodos(propriedades);
         }
