@@ -14,7 +14,7 @@ namespace RF.Estudo.Domain.Core.Interfaces.Infrastructure.Repositorys
         void Alterar(TEntidade entidade);
         void Deletar(TEntidade entidade);
         Task<TEntidade> SelecionarPorId(TId id, params string[] propriedades);
-        Task<List<TEntidade>> SelecionarTodos(params string[] propriedades);
+        Task<IEnumerable<TEntidade>> SelecionarTodos(params string[] propriedades);
         Task<bool> Existe(Expression<Func<TEntidade, bool>> predicado);
     }
 }

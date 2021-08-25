@@ -11,7 +11,7 @@ namespace RF.Estudo.API
 {
     public class Startup
     {
-        private IConfiguration _configuration;
+        private readonly IConfiguration _configuration;
 
         public Startup(IConfiguration configuration)
         {
@@ -22,7 +22,6 @@ namespace RF.Estudo.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<EstudoContext>(options => options.UseSqlServer(this._configuration.GetConnectionString("DefaultConnection")));
-
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
