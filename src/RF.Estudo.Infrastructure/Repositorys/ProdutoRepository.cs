@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using RF.Estudo.Domain.Entities;
 using RF.Estudo.Domain.Interfaces.Repositorys;
 using RF.Estudo.Infrastructure.Contexts;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace RF.Estudo.Infrastructure.Repositorys
 {
@@ -19,19 +19,24 @@ namespace RF.Estudo.Infrastructure.Repositorys
             this._contexto = contexto;
         }
 
-        public async Task<IEnumerable<Produto>> SelecionarTodosAtivos()
+        public async Task<IEnumerable<ProdutoDTO2>> SelecionarTodosAtivos()
         {
-            var retorno = await this._contexto.Set<Produto>().AsNoTracking()
+            return await this._contexto.Set<Produto>().AsNoTracking()
                 .Where(p => p.Situacao)
                 .OrderBy(p => p.Nome)
-                .Select(p => new
+                .Select(p => new ProdutoDTO2
                 {
-                    p.Nome,
-                    p.Valor,
-                    p.Quantidade
+                    Nome = p.Nome,
+                    Valor = p.Valor,
+                    Quantidade = p.Quantidade
                 }).ToListAsync();
-
-            return null;
         }
+    }
+
+    public class ProdutoDTO2
+    {
+        public string Nome { get; set; }
+        public int Quantidade { get; set; }
+        public decimal Valor { get; set; }
     }
 }

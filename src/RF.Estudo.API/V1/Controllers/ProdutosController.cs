@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RF.Estudo.API.Controllers;
-using RF.Estudo.API.V1.Models;
+using RF.Estudo.Application.DTOs;
 using RF.Estudo.Application.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -19,11 +19,11 @@ namespace RF.Estudo.API.V1.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ProdutoModel>>> Index()
+        public async Task<ActionResult<IEnumerable<ProdutoDTO>>> Index()
         {
             try
             {
-                return new OkObjectResult(await this._produtoApplicationService.SelecionarTodos());
+                return new OkObjectResult(await this._produtoApplicationService.SelecionarTodosAtivos());
             }
             catch (Exception ex)
             {
