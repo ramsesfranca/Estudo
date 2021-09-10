@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RF.Estudo.Domain.Entities;
 using RF.Estudo.Domain.Interfaces.Repositorys;
+using RF.Estudo.Domain.Projections;
 using RF.Estudo.Infrastructure.Contexts;
 using System;
 using System.Collections.Generic;
@@ -19,24 +20,17 @@ namespace RF.Estudo.Infrastructure.Repositorys
             this._contexto = contexto;
         }
 
-        public async Task<IEnumerable<ProdutoDTO2>> SelecionarTodosAtivos()
+        public async Task<IEnumerable<ProdutoProjection>> SelecionarTodosAtivos()
         {
             return await this._contexto.Set<Produto>().AsNoTracking()
-                .Where(p => p.Situacao)
-                .OrderBy(p => p.Nome)
-                .Select(p => new ProdutoDTO2
-                {
-                    Nome = p.Nome,
-                    Valor = p.Valor,
-                    Quantidade = p.Quantidade
-                }).ToListAsync();
+                                                      .Where(p => p.Situacao)
+                                                      .OrderBy(p => p.Nome)
+                                                      .Select(p => new ProdutoProjection
+                                                      {
+                                                          Nome = p.Nome,
+                                                          Valor = p.Valor,
+                                                          Quantidade = p.Quantidade
+                                                      }).ToListAsync();
         }
-    }
-
-    public class ProdutoDTO2
-    {
-        public string Nome { get; set; }
-        public int Quantidade { get; set; }
-        public decimal Valor { get; set; }
     }
 }
