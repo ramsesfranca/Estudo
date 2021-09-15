@@ -16,3 +16,13 @@ Projeto para estudar novas tecnologias
 - DDD
 - Unit of Work
 - Repository
+
+## Futuro
+
+- CQRS
+- Elasticsearch
+- Docker
+- Kafka com Azure Functions para comunicação entre os serviços
+- Microsserviços são independentes (ASP.NET WebApi Core with JWT Bearer Authentication)
+- MongoDB 
+- HttpClient para comunicação das Azure Functions com os serviços
