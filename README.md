@@ -19,10 +19,11 @@ Projeto para estudar novas tecnologias
 
 ## Futuro
 
+- TDD
 - CQRS
+- MongoDB 
 - Elasticsearch
 - Docker
 - Kafka com Azure Functions para comunicação entre os serviços
-- Microsserviços são independentes (ASP.NET WebApi Core with JWT Bearer Authentication)
-- MongoDB 
+- Microsserviços são independentes
 - HttpClient para comunicação das Azure Functions com os serviços
