@@ -7,6 +7,7 @@ Projeto para estudar novas tecnologias
 - ASP.NET Core 5
 - ASP.NET WebApi Core with JWT Bearer Authentication (Falta)
 - Entity Framework Core 5
+- FluentValidation
 - AutoMapper
 - Swagger UI with JWT support
 
