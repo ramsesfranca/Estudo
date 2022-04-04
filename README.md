@@ -11,7 +11,7 @@ Projeto para estudar novas tecnologias
 - AutoMapper
 - Swagger UI with JWT support
 - Banco de dados relacionais SQL Server 
-- Conhecimento em Pipeline de integrações de entregas contínuas (CI e CD) no Azure
+- Pipeline de integrações de entregas contínuas (CI e CD) no Azure
 
 ## Arquitetura
 
@@ -28,11 +28,11 @@ Projeto para estudar novas tecnologias
 - FrameWorks Mensageria (RabbitMQ)
 - Banco de dados não relacional NoSQL (MongoDB) 
 - Dapper
-- Conhecimento em frameWork de mecanismo de pesquisa (Elasticsearch)
+- FrameWork de mecanismo de pesquisa (Elasticsearch)
 - Docker
 - Microsserviços são independentes
-- Conhecimento em Banco de dados em memória (Redis)
+- Banco de dados em memória (Redis)
 - Front-end (Angular)
 - Gerenciador de Containers (Kubernetes)
 - HttpClient para comunicação das Azure Functions com os serviços
-- Conhecimento em Pipeline de integrações de entregas contínuas (CI e CD) na AWS
+- Pipeline de integrações de entregas contínuas (CI e CD) na AWS
