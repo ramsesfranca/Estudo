@@ -35,3 +35,4 @@ Projeto para estudar novas tecnologias
 - Gerenciador de Containers (Kubernetes)
 - HttpClient para comunicação das Azure Functions com os serviços
 - Conhecimento em Pipeline de integrações de entregas contínuas (CI e CD) na AWS
+- Front-end (Angular)
