@@ -22,7 +22,7 @@ Projeto para estudar novas tecnologias
 
 - TDD
 - CQRS
-- MongoDB 
+- NoSQL (MongoDB) 
 - Elasticsearch
 - Docker
 - Kafka com Azure Functions para comunicação entre os serviços
