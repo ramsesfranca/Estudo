@@ -32,7 +32,7 @@ Projeto para estudar novas tecnologias
 - Docker
 - Microsserviços são independentes
 - Conhecimento em Banco de dados em memória (Redis)
+- Front-end (Angular)
 - Gerenciador de Containers (Kubernetes)
 - HttpClient para comunicação das Azure Functions com os serviços
 - Conhecimento em Pipeline de integrações de entregas contínuas (CI e CD) na AWS
-- Front-end (Angular)
