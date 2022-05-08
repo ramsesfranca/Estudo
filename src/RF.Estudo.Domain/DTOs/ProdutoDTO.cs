@@ -1,6 +1,6 @@
-﻿namespace RF.Estudo.Domain.Projections
+﻿namespace RF.Estudo.Domain.DTOs
 {
-    public class ProdutoProjection
+    public class ProdutoDTO
     {
         public string Nome { get; set; }
         public int Quantidade { get; set; }

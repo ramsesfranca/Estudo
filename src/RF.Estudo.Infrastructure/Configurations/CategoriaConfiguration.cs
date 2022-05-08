@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using RF.Estudo.Domain.Entities;
 using System;
 
-namespace RF.Estudo.Infrastructure.Mappings
+namespace RF.Estudo.Infrastructure.Configurations
 {
-    public class CategoriaMapping : BaseMapping<Guid, Categoria>
+    public class CategoriaConfiguration : BaseConfiguration<Guid, Categoria>
     {
         public override void Configure(EntityTypeBuilder<Categoria> builder)
         {

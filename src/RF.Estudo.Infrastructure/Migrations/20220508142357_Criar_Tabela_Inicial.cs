@@ -27,16 +27,16 @@ namespace RF.Estudo.Infrastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CategoriaId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Nome = table.Column<string>(type: "varchar(250)", unicode: false, maxLength: 250, nullable: false),
                     Descricao = table.Column<string>(type: "varchar(500)", unicode: false, maxLength: 500, nullable: false),
-                    Valor = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Valor = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
                     Quantidade = table.Column<int>(type: "int", nullable: false),
                     Altura = table.Column<int>(type: "int", nullable: true),
                     Largura = table.Column<int>(type: "int", nullable: true),
                     Profundidade = table.Column<int>(type: "int", nullable: true),
                     TipoProduto = table.Column<int>(type: "int", nullable: false),
-                    Situacao = table.Column<bool>(type: "bit", nullable: false),
-                    CategoriaId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Ativo = table.Column<bool>(type: "bit", nullable: false),
                     DataHoraCadastro = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DataHoraModificado = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
@@ -48,7 +48,7 @@ namespace RF.Estudo.Infrastructure.Migrations
                         column: x => x.CategoriaId,
                         principalTable: "Categorias",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

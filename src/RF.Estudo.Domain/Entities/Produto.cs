@@ -8,14 +8,14 @@ namespace RF.Estudo.Domain.Entities
 {
     public class Produto : BaseEntity<Guid>
     {
+        public Guid CategoriaId { get; private set; }
         public string Nome { get; private set; }
         public string Descricao { get; private set; }
         public decimal Valor { get; private set; }
         public int Quantidade { get; private set; }
         public Dimensoes Dimensoes { get; private set; }
         public TipoProduto TipoProduto { get; private set; }
-        public bool Situacao { get; private set; }
-        public Guid CategoriaId { get; private set; }
+        public bool Ativo { get; private set; }
 
         public virtual Categoria Categoria { get; private set; }
 
@@ -23,32 +23,28 @@ namespace RF.Estudo.Domain.Entities
         {
         }
 
-        public Produto(string nome, string descricao, decimal valor, Dimensoes dimensoes, TipoProduto tipoProduto, bool situacao, Categoria categoria)
+        public Produto(string nome, string descricao, decimal valor, Dimensoes dimensoes, TipoProduto tipoProduto, bool ativo, Guid CategoriaId)
         {
             this.Nome = nome;
             this.Descricao = descricao;
             this.Valor = valor;
             this.Dimensoes = dimensoes;
             this.TipoProduto = tipoProduto;
-            this.Situacao = situacao;
-
-            if (categoria != null)
-            {
-                this.CategoriaId = categoria.Id;
-                this.Categoria = categoria;
-            }
+            this.Ativo = ativo;
+            this.CategoriaId = CategoriaId;
 
             this.Validar();
         }
 
-        public void AdicionarCategoria(Categoria categoria)
+        public void AlterarCategoria(Categoria categoria)
         {
+            this.Categoria = categoria;
             this.CategoriaId = categoria.Id;
         }
 
-        public void Ativar() => Situacao = true;
+        public void Ativar() => this.Ativo = true;
 
-        public void Desativar() => Situacao = false;
+        public void Desativar() => this.Ativo = false;
 
         public void ReporEstoque(int quantidade)
         {
@@ -80,7 +76,7 @@ namespace RF.Estudo.Domain.Entities
             Validacoes.ValidarSeVazio(this.Nome, "O campo Nome do produto não pode estar vazio");
             Validacoes.ValidarSeVazio(this.Descricao, "O campo Descricao do produto não pode estar vazio");
             Validacoes.ValidarSeMenorQue(this.Valor, 1, "O campo Valor do produto não pode se menor igual a 0");
-            Validacoes.ValidarSeIgual(this.Categoria, null, "A Categoria do produto não pode estar vazio");
+            Validacoes.ValidarSeIgual(this.CategoriaId, string.Empty, "A Categoria do produto não pode estar vazio");
         }
     }
 }

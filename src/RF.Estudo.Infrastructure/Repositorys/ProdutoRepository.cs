@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RF.Estudo.Domain.DTOs;
 using RF.Estudo.Domain.Entities;
 using RF.Estudo.Domain.Interfaces.Repositorys;
-using RF.Estudo.Domain.Projections;
 using RF.Estudo.Infrastructure.Contexts;
 using System;
 using System.Collections.Generic;
@@ -20,12 +20,12 @@ namespace RF.Estudo.Infrastructure.Repositorys
             this._contexto = contexto;
         }
 
-        public async Task<IEnumerable<ProdutoProjection>> SelecionarTodosAtivos()
+        public async Task<IEnumerable<ProdutoDTO>> SelecionarTodosAtivos()
         {
             return await this._contexto.Set<Produto>().AsNoTracking()
-                                                      .Where(p => p.Situacao)
+                                                      .Where(p => p.Ativo)
                                                       .OrderBy(p => p.Nome)
-                                                      .Select(p => new ProdutoProjection
+                                                      .Select(p => new ProdutoDTO
                                                       {
                                                           Nome = p.Nome,
                                                           Valor = p.Valor,

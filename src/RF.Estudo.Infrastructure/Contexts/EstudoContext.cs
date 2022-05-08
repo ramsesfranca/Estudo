@@ -12,8 +12,6 @@ namespace RF.Estudo.Infrastructure.Contexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(EstudoContext).Assembly);
-
             #region Configurações Básicas
 
             foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
@@ -22,6 +20,8 @@ namespace RF.Estudo.Infrastructure.Contexts
             }
 
             #endregion
+
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(EstudoContext).Assembly);
         }
     }
 }

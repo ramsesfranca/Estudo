@@ -1,11 +1,11 @@
-﻿using RF.Estudo.Domain.Core.DomainObjects;
+﻿using Microsoft.EntityFrameworkCore;
+using RF.Estudo.Domain.Core.DomainObjects;
 using RF.Estudo.Domain.Core.Interfaces.Infrastructure.Repositorys;
+using RF.Estudo.Infrastructure.Contexts;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using RF.Estudo.Infrastructure.Contexts;
 
 namespace RF.Estudo.Infrastructure.Repositorys
 {
@@ -21,7 +21,7 @@ namespace RF.Estudo.Infrastructure.Repositorys
             this._contexto = contexto ?? throw new ArgumentNullException(nameof(contexto));
             this._entidade = contexto.Set<TEntidade>();
         }
-        
+
         public virtual void Inserir(TEntidade entidade)
         {
             this._entidade.Add(entidade);

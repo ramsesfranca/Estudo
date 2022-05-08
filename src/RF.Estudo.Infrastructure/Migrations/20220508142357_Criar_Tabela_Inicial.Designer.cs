@@ -10,7 +10,7 @@ using RF.Estudo.Infrastructure.Contexts;
 namespace RF.Estudo.Infrastructure.Migrations
 {
     [DbContext(typeof(EstudoContext))]
-    [Migration("20210813030117_Criar_Tabela_Inicial")]
+    [Migration("20220508142357_Criar_Tabela_Inicial")]
     partial class Criar_Tabela_Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -56,6 +56,9 @@ namespace RF.Estudo.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("bit");
+
                     b.Property<Guid>("CategoriaId")
                         .HasColumnType("uniqueidentifier");
 
@@ -80,13 +83,11 @@ namespace RF.Estudo.Infrastructure.Migrations
                     b.Property<int>("Quantidade")
                         .HasColumnType("int");
 
-                    b.Property<bool>("Situacao")
-                        .HasColumnType("bit");
-
                     b.Property<int>("TipoProduto")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Valor")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
@@ -101,7 +102,7 @@ namespace RF.Estudo.Infrastructure.Migrations
                     b.HasOne("RF.Estudo.Domain.Entities.Categoria", "Categoria")
                         .WithMany("Produtos")
                         .HasForeignKey("CategoriaId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.OwnsOne("RF.Estudo.Domain.ValueObjects.Dimensoes", "Dimensoes", b1 =>

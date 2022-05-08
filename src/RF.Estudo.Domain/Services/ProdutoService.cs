@@ -1,7 +1,7 @@
-﻿using RF.Estudo.Domain.Entities;
+﻿using RF.Estudo.Domain.DTOs;
+using RF.Estudo.Domain.Entities;
 using RF.Estudo.Domain.Interfaces.Repositorys;
 using RF.Estudo.Domain.Interfaces.Services;
-using RF.Estudo.Domain.Projections;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -18,7 +18,7 @@ namespace RF.Estudo.Domain.Services
             this._produtoRepository = produtoRepository;
         }
 
-        public async Task<IEnumerable<ProdutoProjection>> SelecionarTodosAtivos()
+        public async Task<IEnumerable<ProdutoDTO>> SelecionarTodosAtivos()
         {
             return await this._produtoRepository.SelecionarTodosAtivos();
         }

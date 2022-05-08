@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using RF.Estudo.Domain.Entities;
 using System;
 
-namespace RF.Estudo.Infrastructure.Mappings
+namespace RF.Estudo.Infrastructure.Configurations
 {
-    public class ProdutoMapping : BaseMapping<Guid, Produto>
+    public class ProdutoConfiguration : BaseConfiguration<Guid, Produto>
     {
         public override void Configure(EntityTypeBuilder<Produto> builder)
         {
@@ -15,6 +15,7 @@ namespace RF.Estudo.Infrastructure.Mappings
 
             builder.Property(p => p.Nome).HasMaxLength(250).IsUnicode(false).IsRequired();
             builder.Property(p => p.Descricao).HasMaxLength(500).IsUnicode(false).IsRequired();
+            builder.Property(p => p.Valor).HasPrecision(18, 2).IsRequired();
             builder.OwnsOne(p => p.Dimensoes, cm =>
             {
                 cm.Property(d => d.Altura).HasColumnName("Altura").HasColumnType("int");
