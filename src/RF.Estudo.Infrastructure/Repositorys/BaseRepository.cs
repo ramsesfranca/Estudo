@@ -54,7 +54,7 @@ namespace RF.Estudo.Infrastructure.Repositorys
 
         public virtual void Dispose()
         {
-            this._contexto.Dispose();
+            this._contexto?.Dispose();
             GC.SuppressFinalize(this);
         }
 

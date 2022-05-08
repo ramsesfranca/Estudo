@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using RF.Estudo.Application.DTOs;
 using RF.Estudo.Application.Services.Interfaces;
+using RF.Estudo.Application.ViewModels;
 using RF.Estudo.Domain.Core.DomainObjects;
 using RF.Estudo.Domain.Core.Interfaces.Service.Services;
 using System;
@@ -13,7 +13,7 @@ namespace RF.Estudo.Application.Services
     public abstract class BaseApplicationService<TId, TEntidade, TEntidadeDTO, TIBaseService> : IBaseApplicationService<TId, TEntidadeDTO>
         where TId : IEquatable<TId>
         where TEntidade : BaseEntity<TId>
-        where TEntidadeDTO : BaseDTO<TId>
+        where TEntidadeDTO : BaseViewModel<TId>
         where TIBaseService : IBaseService<TId, TEntidade>
 
     {
@@ -58,7 +58,7 @@ namespace RF.Estudo.Application.Services
 
         public void Dispose()
         {
-            this._baseService.Dispose();
+            this._baseService?.Dispose();
         }
     }
 }

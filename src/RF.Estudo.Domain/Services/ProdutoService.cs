@@ -18,6 +18,49 @@ namespace RF.Estudo.Domain.Services
             this._produtoRepository = produtoRepository;
         }
 
+        public async Task<bool> DebitarEstoque(Guid produtoId, int quantidade)
+        {
+            var produto = await this._produtoRepository.SelecionarPorId(produtoId);
+
+            if (produto == null)
+            {
+                return false;
+            }
+
+            if (!produto.PossuiEstoque(quantidade))
+            {
+                return false;
+            }
+
+            produto.DebitarEstoque(quantidade);
+
+            // TODO: Parametrizar a quantidade de estoque baixo
+            if (produto.Quantidade < 10)
+            {
+                //await _bus.PublicarEvento(new ProdutoAbaixoEstoqueEvent(produto.Id, produto.Quantidade));
+            }
+
+            this._produtoRepository.Alterar(produto);
+
+            return true;
+        }
+
+        public async Task<bool> ReporEstoque(Guid produtoId, int quantidade)
+        {
+            var produto = await this._produtoRepository.SelecionarPorId(produtoId);
+
+            if (produto == null)
+            {
+                return false;
+            }
+
+            produto.ReporEstoque(quantidade);
+
+            this._produtoRepository.Alterar(produto);
+
+            return true;
+        }
+
         public async Task<IEnumerable<ProdutoDTO>> SelecionarTodosAtivos()
         {
             return await this._produtoRepository.SelecionarTodosAtivos();

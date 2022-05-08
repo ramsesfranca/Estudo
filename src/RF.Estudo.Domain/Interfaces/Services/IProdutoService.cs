@@ -9,6 +9,8 @@ namespace RF.Estudo.Domain.Interfaces.Services
 {
     public interface IProdutoService : IBaseService<Guid, Produto>
     {
+        Task<bool> DebitarEstoque(Guid produtoId, int quantidade);
+        Task<bool> ReporEstoque(Guid produtoId, int quantidade);
         Task<IEnumerable<ProdutoDTO>> SelecionarTodosAtivos();
     }
 }

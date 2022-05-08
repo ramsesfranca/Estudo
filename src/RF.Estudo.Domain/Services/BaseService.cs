@@ -52,7 +52,7 @@ namespace RF.Estudo.Domain.Services
 
         public void Dispose()
         {
-            this._baseRepository.Dispose();
+            this._baseRepository?.Dispose();
         }
     }
 }
