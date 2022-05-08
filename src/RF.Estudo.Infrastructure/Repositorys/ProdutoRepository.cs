@@ -20,7 +20,7 @@ namespace RF.Estudo.Infrastructure.Repositorys
             this._contexto = contexto;
         }
 
-        public async Task<IEnumerable<ProdutoDTO>> SelecionarTodosAtivos()
+        public async Task<List<ProdutoDTO>> SelecionarTodosAtivos()
         {
             return await this._contexto.Set<Produto>().AsNoTracking()
                                                       .Where(p => p.Ativo)

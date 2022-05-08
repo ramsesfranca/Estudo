@@ -1,10 +1,11 @@
 ﻿using RF.Estudo.Domain.Core.DomainObjects;
+using RF.Estudo.Domain.Core.Interfaces;
 using System;
 using System.Collections.Generic;
 
 namespace RF.Estudo.Domain.Entities
 {
-    public class Categoria : BaseEntity<Guid>
+    public class Categoria : BaseEntity<Guid>, IAggregateRoot
     {
         public string Nome { get; private set; }
         public string Descricao { get; private set; }

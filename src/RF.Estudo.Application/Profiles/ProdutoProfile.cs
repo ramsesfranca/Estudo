@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
-using RF.Estudo.Application.ViewModels;
+using RF.Estudo.Application.ViewModels.Produto;
+using RF.Estudo.Domain.DTOs;
 using RF.Estudo.Domain.Entities;
 using RF.Estudo.Domain.Enums;
 using RF.Estudo.Domain.ValueObjects;
@@ -10,12 +11,12 @@ namespace RF.Estudo.Application.Profiles
     {
         public ProdutoProfile()
         {
-            CreateMap<Produto, ProdutoViewModel>()
+            this.CreateMap<Produto, ProdutoViewModel>()
                 .ForMember(d => d.Largura, o => o.MapFrom(s => s.Dimensoes.Largura))
                 .ForMember(d => d.Altura, o => o.MapFrom(s => s.Dimensoes.Altura))
                 .ForMember(d => d.Profundidade, o => o.MapFrom(s => s.Dimensoes.Profundidade));
 
-            CreateMap<ProdutoViewModel, Produto>()
+            this.CreateMap<ProdutoViewModel, Produto>()
                 .ConstructUsing(p =>
                     new Produto(p.Nome,
                         p.Descricao,
@@ -24,6 +25,8 @@ namespace RF.Estudo.Application.Profiles
                         TipoProduto.MateriaPrima,
                         p.Ativo,
                         p.CategoriaId));
+
+            this.CreateMap<ProdutoDTO, ListaProdutoViewModel>();
         }
     }
 }

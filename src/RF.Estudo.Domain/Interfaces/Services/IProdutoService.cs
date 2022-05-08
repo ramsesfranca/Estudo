@@ -11,6 +11,6 @@ namespace RF.Estudo.Domain.Interfaces.Services
     {
         Task<bool> DebitarEstoque(Guid produtoId, int quantidade);
         Task<bool> ReporEstoque(Guid produtoId, int quantidade);
-        Task<IEnumerable<ProdutoDTO>> SelecionarTodosAtivos();
+        Task<List<ProdutoDTO>> SelecionarTodosAtivos();
     }
 }

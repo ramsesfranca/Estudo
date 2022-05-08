@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RF.Estudo.Domain.Core.DomainObjects;
+using RF.Estudo.Domain.Core.Interfaces;
 using RF.Estudo.Domain.Core.Interfaces.Infrastructure.Repositorys;
 using RF.Estudo.Infrastructure.Contexts;
 using System;
@@ -11,7 +12,7 @@ namespace RF.Estudo.Infrastructure.Repositorys
 {
     public abstract class BaseRepository<TId, TEntidade> : IBaseRepository<TId, TEntidade>
         where TId : IEquatable<TId>
-        where TEntidade : BaseEntity<TId>
+        where TEntidade : BaseEntity<TId>, IAggregateRoot
     {
         private readonly EstudoContext _contexto;
         private readonly DbSet<TEntidade> _entidade;

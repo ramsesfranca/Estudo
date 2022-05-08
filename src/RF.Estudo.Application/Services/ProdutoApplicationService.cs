@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using RF.Estudo.Application.Services.Interfaces;
-using RF.Estudo.Application.ViewModels;
+using RF.Estudo.Application.ViewModels.Produto;
 using RF.Estudo.Domain.Entities;
 using RF.Estudo.Domain.Interfaces.Services;
 using System;
@@ -21,9 +21,9 @@ namespace RF.Estudo.Application.Services
             this._produtoService = produtoService;
         }
 
-        public async Task<IEnumerable<ProdutoViewModel>> SelecionarTodosAtivos()
+        public async Task<List<ListaProdutoViewModel>> SelecionarTodosAtivos()
         {
-            return this._mapper.Map<IEnumerable<ProdutoViewModel>>(await this._produtoService.SelecionarTodosAtivos());
+            return this._mapper.Map<List<ListaProdutoViewModel>>(await this._produtoService.SelecionarTodosAtivos());
         }
     }
 }

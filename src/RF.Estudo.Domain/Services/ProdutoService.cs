@@ -61,7 +61,7 @@ namespace RF.Estudo.Domain.Services
             return true;
         }
 
-        public async Task<IEnumerable<ProdutoDTO>> SelecionarTodosAtivos()
+        public async Task<List<ProdutoDTO>> SelecionarTodosAtivos()
         {
             return await this._produtoRepository.SelecionarTodosAtivos();
         }

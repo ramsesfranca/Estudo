@@ -1,4 +1,5 @@
 ﻿using RF.Estudo.Domain.Core.DomainObjects;
+using RF.Estudo.Domain.Core.Interfaces;
 using RF.Estudo.Domain.Core.Interfaces.Infrastructure.Repositorys;
 using RF.Estudo.Domain.Core.Interfaces.Service.Services;
 using System;
@@ -10,7 +11,7 @@ namespace RF.Estudo.Domain.Services
 {
     public abstract class BaseService<TId, TEntidade, TBaseRepository> : IBaseService<TId, TEntidade>
         where TId : IEquatable<TId>
-        where TEntidade : BaseEntity<TId>
+        where TEntidade : BaseEntity<TId>, IAggregateRoot
         where TBaseRepository : IBaseRepository<TId, TEntidade>
     {
         private readonly TBaseRepository _baseRepository;

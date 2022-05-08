@@ -1,12 +1,13 @@
 ﻿using RF.Estudo.Domain.Core.DomainObjects;
 using RF.Estudo.Domain.Core.Exceptions;
+using RF.Estudo.Domain.Core.Interfaces;
 using RF.Estudo.Domain.Enums;
 using RF.Estudo.Domain.ValueObjects;
 using System;
 
 namespace RF.Estudo.Domain.Entities
 {
-    public class Produto : BaseEntity<Guid>
+    public class Produto : BaseEntity<Guid>, IAggregateRoot
     {
         public Guid CategoriaId { get; private set; }
         public string Nome { get; private set; }

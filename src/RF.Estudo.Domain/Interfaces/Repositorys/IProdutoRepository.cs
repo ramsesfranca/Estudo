@@ -9,6 +9,6 @@ namespace RF.Estudo.Domain.Interfaces.Repositorys
 {
     public interface IProdutoRepository : IBaseRepository<Guid, Produto>
     {
-        Task<IEnumerable<ProdutoDTO>> SelecionarTodosAtivos();
+        Task<List<ProdutoDTO>> SelecionarTodosAtivos();
     }
 }

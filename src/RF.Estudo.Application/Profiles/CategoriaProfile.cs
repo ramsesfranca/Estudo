@@ -8,9 +8,9 @@ namespace RF.Estudo.Application.Profiles
     {
         public CategoriaProfile()
         {
-            CreateMap<Categoria, CategoriaViewModel>();
+            this.CreateMap<Categoria, CategoriaViewModel>();
 
-            CreateMap<CategoriaViewModel, Categoria>()
+            this.CreateMap<CategoriaViewModel, Categoria>()
                 .ConstructUsing(c => new Categoria(c.Nome, c.Descricao));
         }
     }

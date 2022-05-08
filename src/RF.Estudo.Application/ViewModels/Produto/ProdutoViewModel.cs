@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace RF.Estudo.Application.ViewModels
+namespace RF.Estudo.Application.ViewModels.Produto
 {
     public class ProdutoViewModel : BaseViewModel<Guid>
     {
