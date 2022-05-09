@@ -6,12 +6,22 @@
 
     <ItemGroup>
       <Compile Remove="Mappers\**" />
+      <Compile Remove="ViewModels\Produto\**" />
       <EmbeddedResource Remove="Mappers\**" />
+      <EmbeddedResource Remove="ViewModels\Produto\**" />
       <None Remove="Mappers\**" />
+      <None Remove="ViewModels\Produto\**" />
     </ItemGroup>
 
     <ItemGroup>
       <Compile Remove="Class1.cs" />
+      <Compile Remove="Profiles\CategoriaProfile.cs" />
+      <Compile Remove="Profiles\ProdutoProfile.cs" />
+      <Compile Remove="Services\CategoriaApplicationService.cs" />
+      <Compile Remove="Services\Interfaces\ICategoriaApplicationService.cs" />
+      <Compile Remove="Services\Interfaces\IProdutoApplicationService.cs" />
+      <Compile Remove="Services\ProdutoApplicationService.cs" />
+      <Compile Remove="ViewModels\CategoriaViewModel.cs" />
     </ItemGroup>
 
     <ItemGroup>
@@ -20,10 +30,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\RF.Estudo.Domain\RF.Estudo.Domain.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Profiles\" />
     </ItemGroup>
 
 </Project>

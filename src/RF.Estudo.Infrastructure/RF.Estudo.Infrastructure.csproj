@@ -6,6 +6,10 @@
 
     <ItemGroup>
       <Compile Remove="Class1.cs" />
+      <Compile Remove="Configurations\CategoriaConfiguration.cs" />
+      <Compile Remove="Configurations\ProdutoConfiguration.cs" />
+      <Compile Remove="Repositorys\CategoriaRepository.cs" />
+      <Compile Remove="Repositorys\ProdutoRepository.cs" />
     </ItemGroup>
 
     <ItemGroup>
@@ -15,6 +19,10 @@
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
       <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.9" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.9">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
     </ItemGroup>
 
     <ItemGroup>

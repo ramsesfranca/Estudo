@@ -5,8 +5,23 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Compile Remove="Class1.cs" />
-      <Compile Remove="Entities\Cliente.cs" />
+      <Compile Remove="DTOs\**" />
+      <EmbeddedResource Remove="DTOs\**" />
+      <None Remove="DTOs\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Entities\Categoria.cs" />
+      <Compile Remove="Entities\Produto.cs" />
+      <Compile Remove="Enums\TipoProduto.cs" />
+      <Compile Remove="Interfaces\Repositorys\ICategoriaRepository.cs" />
+      <Compile Remove="Interfaces\Repositorys\IProdutoRepository.cs" />
+      <Compile Remove="Interfaces\Services\ICategoriaService.cs" />
+      <Compile Remove="Interfaces\Services\IProdutoService.cs" />
+      <Compile Remove="Services\CategoriaService.cs" />
+      <Compile Remove="Services\ProdutoService.cs" />
+      <Compile Remove="Validations\ProdutoValidation.cs" />
+      <Compile Remove="ValueObjects\Dimensoes.cs" />
     </ItemGroup>
 
     <ItemGroup>
@@ -16,10 +31,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\RF.Estudo.Domain.Core\RF.Estudo.Domain.Core.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Validations\" />
     </ItemGroup>
 
 </Project>
