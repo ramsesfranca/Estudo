@@ -24,7 +24,7 @@ namespace RF.Estudo.Infrastructure.Configurations
                 cm.Property(l => l.Cep).HasColumnName("Cep").HasMaxLength(10).IsUnicode(false).IsRequired();
             });
 
-            // 1 : N => Categorias : Produtos
+            // 1 : N => Telefones : Cliente
             builder.HasMany(c => c.Telefones).WithOne(t => t.Cliente).HasForeignKey(t => t.ClienteId).OnDelete(DeleteBehavior.Cascade);
         }
     }

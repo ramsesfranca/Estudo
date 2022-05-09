@@ -23,6 +23,8 @@ namespace RF.Estudo.Application.Profiles
                         new Localizacao(c.Endereco, c.Bairro, c.Cidade, c.Cep),
                         c.Nascimento,
                         m.Mapper.Map<List<Telefone>>(c.Telefones)));
+
+            this.CreateMap<Telefone, TelefoneViewModel>().ReverseMap();
         }
     }
 }
