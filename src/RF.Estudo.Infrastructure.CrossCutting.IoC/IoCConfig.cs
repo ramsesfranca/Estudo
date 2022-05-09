@@ -14,12 +14,15 @@ namespace RF.Estudo.Infrastructure.CrossCutting.IoC
     {
         public static IServiceCollection ResolveDependencies(this IServiceCollection services)
         {
+            // Data
             services.AddScoped<EstudoContext>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
 
+            // Services
             services.AddScoped<IProdutoService, ProdutoService>();
 
+            // Application
             services.AddScoped<IProdutoApplicationService, ProdutoApplicationService>();
 
             return services;
