@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using RF.Estudo.API.Controllers;
 using RF.Estudo.Application.Services.Interfaces;
 using RF.Estudo.Application.ViewModels.Produto;
@@ -19,16 +20,79 @@ namespace RF.Estudo.API.V1.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<ListaProdutoViewModel>>> Index()
+        public async Task<ActionResult<List<ListaProdutoViewModel>>> ObterTodosAtivos()
         {
+            return this.Ok(await this._produtoApplicationService.SelecionarTodosAtivos());
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<FormularioProdutoViewModel>> ObterPorId(Guid id)
+        {
+            var model = await this._produtoApplicationService.SelecionarPorId(id);
+
+            if (model == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(model);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<FormularioProdutoViewModel>> Inserir(FormularioProdutoViewModel modelo)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            await this._produtoApplicationService.Inserir(modelo);
+
+            return Ok(modelo);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Atualizar(Guid id, FormularioProdutoViewModel modelo)
+        {
+            if (id != modelo.Id)
+            {
+                return BadRequest();
+            }
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             try
             {
-                return this.Ok(await this._produtoApplicationService.SelecionarTodosAtivos());
+                await this._produtoApplicationService.Alterar(modelo);
             }
-            catch (Exception ex)
+            catch (DbUpdateConcurrencyException)
             {
-                return BadRequest(ex.Message);
+                if (!await this._produtoApplicationService.Existe(p => p.Id.Equals(id)))
+                {
+                    return NotFound();
+                }
+
+                throw;
             }
+
+            return Ok(modelo);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<FormularioProdutoViewModel>> Deletar(Guid id)
+        {
+            var modelo = await this._produtoApplicationService.SelecionarPorId(id);
+
+            if (modelo == null)
+            {
+                return NotFound();
+            }
+
+            await this._produtoApplicationService.Deletar(modelo);
+
+            return Ok();
         }
     }
 }

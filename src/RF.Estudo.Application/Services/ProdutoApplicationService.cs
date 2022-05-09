@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RF.Estudo.Application.Services
 {
-    public class ProdutoApplicationService : BaseApplicationService<Guid, Produto, ProdutoViewModel, IProdutoService>, IProdutoApplicationService
+    public class ProdutoApplicationService : BaseApplicationService<Guid, Produto, FormularioProdutoViewModel, IProdutoService>, IProdutoApplicationService
     {
         private readonly IMapper _mapper;
         private readonly IProdutoService _produtoService;

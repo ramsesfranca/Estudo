@@ -10,11 +10,16 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="FluentValidation" Version="11.0.1" />
       <PackageReference Include="MediatR" Version="10.0.1" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\RF.Estudo.Domain.Core\RF.Estudo.Domain.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Validations\" />
     </ItemGroup>
 
 </Project>

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace RF.Estudo.Application.Services.Interfaces
 {
-    public interface IProdutoApplicationService : IBaseApplicationService<Guid, ProdutoViewModel>
+    public interface IProdutoApplicationService : IBaseApplicationService<Guid, FormularioProdutoViewModel>
     {
         Task<List<ListaProdutoViewModel>> SelecionarTodosAtivos();
     }

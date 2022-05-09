@@ -37,6 +37,20 @@ namespace RF.Estudo.Domain.Entities
             this.Validar();
         }
 
+        public void AlterarNome(string nome)
+        {
+            Validacoes.ValidarSeVazio(nome, "O campo Nome do produto não pode estar vazio");
+
+            this.Nome = nome;
+        }
+
+        public void AlterarDescricao(string descricao)
+        {
+            Validacoes.ValidarSeVazio(descricao, "O campo Descrição do produto não pode estar vazio");
+
+            this.Descricao = descricao;
+        }
+
         public void AlterarCategoria(Categoria categoria)
         {
             this.Categoria = categoria;

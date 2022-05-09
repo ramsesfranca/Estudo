@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace RF.Estudo.Application.ViewModels.Produto
 {
-    public class ProdutoViewModel : BaseViewModel<Guid>
+    public class FormularioProdutoViewModel : BaseViewModel<Guid>
     {
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public Guid CategoriaId { get; set; }
@@ -20,9 +20,6 @@ namespace RF.Estudo.Application.ViewModels.Produto
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public decimal Valor { get; set; }
-
-        [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        public DateTime DataCadastro { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public string Imagem { get; set; }

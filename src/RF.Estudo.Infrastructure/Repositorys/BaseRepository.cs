@@ -50,7 +50,7 @@ namespace RF.Estudo.Infrastructure.Repositorys
 
         public virtual async Task<bool> Existe(Expression<Func<TEntidade, bool>> predicado)
         {
-            return await this._entidade.AnyAsync();
+            return await this._entidade.AnyAsync(predicado);
         }
 
         public virtual void Dispose()

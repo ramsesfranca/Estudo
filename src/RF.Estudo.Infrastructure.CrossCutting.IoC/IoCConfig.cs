@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using RF.Estudo.Application.Services;
 using RF.Estudo.Application.Services.Interfaces;
+using RF.Estudo.Domain.Core.Interfaces.Infrastructure;
 using RF.Estudo.Domain.Interfaces.Repositorys;
 using RF.Estudo.Domain.Interfaces.Services;
 using RF.Estudo.Domain.Services;
@@ -14,7 +15,7 @@ namespace RF.Estudo.Infrastructure.CrossCutting.IoC
         public static IServiceCollection ResolveDependencies(this IServiceCollection services)
         {
             services.AddScoped<EstudoContext>();
-            //services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
 
             services.AddScoped<IProdutoService, ProdutoService>();

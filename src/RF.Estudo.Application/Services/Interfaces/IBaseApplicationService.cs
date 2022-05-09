@@ -9,9 +9,9 @@ namespace RF.Estudo.Application.Services.Interfaces
         where TId : IEquatable<TId>
         where TEntidadeDTO : class
     {
-        void Inserir(TEntidadeDTO entidade);
-        void Alterar(TEntidadeDTO entidade);
-        void Deletar(TEntidadeDTO entidade);
+        Task Inserir(TEntidadeDTO modelo);
+        Task Alterar(TEntidadeDTO modelo);
+        Task Deletar(TEntidadeDTO modelo);
         Task<TEntidadeDTO> SelecionarPorId(TId id, params string[] propriedades);
         Task<IEnumerable<TEntidadeDTO>> SelecionarTodos(params string[] propriedades);
         Task<bool> Existe(Expression<Func<TEntidadeDTO, bool>> predicado);
