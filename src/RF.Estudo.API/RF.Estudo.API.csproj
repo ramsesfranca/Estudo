@@ -6,7 +6,15 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Compile Remove="V1\Controllers\ProdutosController.cs" />
+      <Compile Remove="V1\Controllers\**" />
+      <Content Remove="V1\Controllers\**" />
+      <EmbeddedResource Remove="V1\Controllers\**" />
+      <None Remove="V1\Controllers\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Include="V1\Controllers\ClientesController.cs" />
+      <Compile Include="V1\Controllers\ServicosController.cs" />
     </ItemGroup>
 
     <ItemGroup>

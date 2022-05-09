@@ -8,7 +8,8 @@ namespace RF.Estudo.API.Configurations
         public static IServiceCollection AddMapperConfig(this IServiceCollection services)
         {
             services.AddAutoMapper(typeof(ClienteProfile),
-                typeof(TelefoneProfile));
+                typeof(TelefoneProfile),
+                typeof(ServicoProfile));
 
             return services;
         }

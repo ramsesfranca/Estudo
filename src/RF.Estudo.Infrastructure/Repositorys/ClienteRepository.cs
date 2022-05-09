@@ -21,12 +21,10 @@ namespace RF.Estudo.Infrastructure.Repositorys
 
         public override async Task<IEnumerable<Cliente>> SelecionarTodos(params string[] propriedades)
         {
-            var teste = await this._contexto.Set<Cliente>().AsNoTracking()
+            return await this._contexto.Set<Cliente>().AsNoTracking()
                                                       .Include("Telefones")
                                                       .OrderBy(p => p.Nome)
                                                       .ToListAsync();
-
-            return teste;
         }
 
         public async Task<List<Cliente>> SelecionarTodosOrdenadoPeloNome()

@@ -18,12 +18,15 @@ namespace RF.Estudo.Infrastructure.CrossCutting.IoC
             services.AddScoped<EstudoContext>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IClienteRepository, ClienteRepository>();
+            services.AddScoped<IServicoRepository, ServicoRepository>();
 
             // Services
             services.AddScoped<IClienteService, ClienteService>();
+            services.AddScoped<IServicoService, ServicoService>();
 
             // Application
             services.AddScoped<IClienteApplicationService, ClienteApplicationService>();
+            services.AddScoped<IServicoApplicationService, ServicoApplicationService>();
 
             return services;
         }
