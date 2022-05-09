@@ -14,6 +14,7 @@ namespace RF.Estudo.Domain.Entities
         public Localizacao Localizacao { get; private set; }
 
         public virtual ICollection<Telefone> Telefones { get; private set; }
+        public virtual ICollection<Hospedagem> Hospedagems { get; private set; }
 
         protected Cliente()
         {

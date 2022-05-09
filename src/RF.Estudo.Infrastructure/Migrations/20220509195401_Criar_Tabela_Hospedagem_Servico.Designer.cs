@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RF.Estudo.Infrastructure.Contexts;
 
 namespace RF.Estudo.Infrastructure.Migrations
 {
     [DbContext(typeof(EstudoContext))]
-    partial class EstudoContextModelSnapshot : ModelSnapshot
+    [Migration("20220509195401_Criar_Tabela_Hospedagem_Servico")]
+    partial class Criar_Tabela_Hospedagem_Servico
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,8 +40,7 @@ namespace RF.Estudo.Infrastructure.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier")
-                        .HasDefaultValueSql("NEWID()");
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Capacidade")
                         .HasColumnType("int");
@@ -73,8 +74,7 @@ namespace RF.Estudo.Infrastructure.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier")
-                        .HasDefaultValueSql("NEWID()");
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("DataHoraCadastro")
                         .HasColumnType("datetime2");
@@ -106,8 +106,7 @@ namespace RF.Estudo.Infrastructure.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier")
-                        .HasDefaultValueSql("NEWID()");
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("ChaleId")
                         .HasColumnType("uniqueidentifier");
@@ -197,8 +196,7 @@ namespace RF.Estudo.Infrastructure.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier")
-                        .HasDefaultValueSql("NEWID()");
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("DataHoraCadastro")
                         .HasColumnType("datetime2");
@@ -263,7 +261,6 @@ namespace RF.Estudo.Infrastructure.Migrations
                     b.OwnsOne("RF.Estudo.Domain.ValueObjects.Localizacao", "Localizacao", b1 =>
                         {
                             b1.Property<Guid>("ClienteId")
-                                .ValueGeneratedOnAdd()
                                 .HasColumnType("uniqueidentifier");
 
                             b1.Property<string>("Bairro")

@@ -20,16 +20,19 @@ namespace RF.Estudo.Infrastructure.CrossCutting.IoC
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<IServicoRepository, ServicoRepository>();
             services.AddScoped<IChaleRepository, ChaleRepository>();
+            services.AddScoped<IHospedagemRepository, HospedagemRepository>();
 
             // Services
             services.AddScoped<IClienteService, ClienteService>();
             services.AddScoped<IServicoService, ServicoService>();
             services.AddScoped<IChaleService, ChaleService>();
+            services.AddScoped<IHospedagemService, HospedagemService>();
 
             // Application
             services.AddScoped<IClienteApplicationService, ClienteApplicationService>();
             services.AddScoped<IServicoApplicationService, ServicoApplicationService>();
             services.AddScoped<IChaleApplicationService, ChaleApplicationService>();
+            services.AddScoped<IHospedagemApplicationService, HospedagemApplicationService>();
 
             return services;
         }

@@ -7,8 +7,8 @@ namespace RF.Estudo.Domain.Entities
     public class Telefone
     {
         public string Numero { get; private set; }
-        public TipoTelefone TipoTelefone { get; set; }
         public Guid? ClienteId { get; set; }
+        public TipoTelefone TipoTelefone { get; set; }
 
         public virtual Cliente Cliente { get; private set; }
 

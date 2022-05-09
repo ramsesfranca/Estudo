@@ -13,7 +13,7 @@ namespace RF.Estudo.Infrastructure.Configurations
         {
             builder.HasKey(e => e.Id);
 
-            builder.Property(e => e.Id).IsRequired();
+            builder.Property(e => e.Id).HasDefaultValueSql("NEWID()").IsRequired();
             builder.Property(e => e.DataHoraCadastro).IsRequired();
             builder.Property(e => e.DataHoraModificado);
         }

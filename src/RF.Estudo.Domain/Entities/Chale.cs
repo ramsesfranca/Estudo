@@ -13,6 +13,7 @@ namespace RF.Estudo.Domain.Entities
         public decimal ValorBaixaEstacao { get; private set; }
 
         public virtual ICollection<Item> Itens { get; private set; }
+        public virtual ICollection<Hospedagem> Hospedagems { get; private set; }
 
         protected Chale()
         {

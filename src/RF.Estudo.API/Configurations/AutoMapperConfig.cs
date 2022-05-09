@@ -9,7 +9,8 @@ namespace RF.Estudo.API.Configurations
         {
             services.AddAutoMapper(typeof(ClienteProfile),
                 typeof(ServicoProfile),
-                typeof(ChaleProfile));
+                typeof(ChaleProfile),
+                typeof(HospedagemProfile));
 
             return services;
         }

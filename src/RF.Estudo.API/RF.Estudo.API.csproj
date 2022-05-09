@@ -15,6 +15,7 @@
     <ItemGroup>
       <Compile Include="V1\Controllers\ChalesController.cs" />
       <Compile Include="V1\Controllers\ClientesController.cs" />
+      <Compile Include="V1\Controllers\HospedagensController.cs" />
       <Compile Include="V1\Controllers\ServicosController.cs" />
     </ItemGroup>
 

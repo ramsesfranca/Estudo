@@ -1,6 +1,7 @@
 ﻿using RF.Estudo.Domain.Core.DomainObjects;
 using RF.Estudo.Domain.Core.Interfaces;
 using System;
+using System.Collections.Generic;
 
 namespace RF.Estudo.Domain.Entities
 {
@@ -8,6 +9,8 @@ namespace RF.Estudo.Domain.Entities
     {
         public string Nome { get; private set; }
         public decimal Valor { get; private set; }
+
+        public virtual ICollection<Hospedagem> Hospedagems { get; private set; }
 
         protected Servico()
         {
