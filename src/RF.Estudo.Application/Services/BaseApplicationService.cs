@@ -14,7 +14,7 @@ namespace RF.Estudo.Application.Services
     public abstract class BaseApplicationService<TId, TEntidade, TViewModel, TIBaseService> : IBaseApplicationService<TId, TViewModel>
         where TId : IEquatable<TId>
         where TEntidade : BaseEntity<TId>, IAggregateRoot
-        where TViewModel : BaseViewModel<TId>
+        where TViewModel : BaseViewModel
         where TIBaseService : IBaseService<TId, TEntidade>
 
     {

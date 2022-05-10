@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace RF.Estudo.Application.ViewModels
 {
-    public class ClienteViewModel : BaseViewModel<Guid>
+    public class ClienteViewModel : BaseViewModel
     {
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public string Nome { get; set; }

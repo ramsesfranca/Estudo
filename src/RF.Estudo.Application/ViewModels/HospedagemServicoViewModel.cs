@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace RF.Estudo.Application.ViewModels
+﻿namespace RF.Estudo.Application.ViewModels
 {
-    public class HospedagemServicoViewModel : BaseViewModel<Guid>
+    public class HospedagemServicoViewModel : BaseViewModel
     {
         public string Nome { get; set; }
 

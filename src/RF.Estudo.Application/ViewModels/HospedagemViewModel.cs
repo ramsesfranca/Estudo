@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace RF.Estudo.Application.ViewModels
 {
-    public class HospedagemViewModel : BaseViewModel<Guid>
+    public class HospedagemViewModel : BaseViewModel
     {
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public Guid ChaleId { get; set; }
