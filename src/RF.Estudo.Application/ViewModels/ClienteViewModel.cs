@@ -15,16 +15,12 @@ namespace RF.Estudo.Application.ViewModels
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public DateTime Nascimento { get; set; }
 
-        [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public string Endereco { get; set; }
 
-        [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public string Bairro { get; set; }
 
-        [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public string Cidade { get; set; }
 
-        [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public string Cep { get; set; }
 
         public List<TelefoneViewModel> Telefones { get; set; }

@@ -15,8 +15,6 @@ namespace RF.Estudo.Domain.ValueObjects
             this.Bairro = bairro;
             this.Cidade = cidade;
             this.Cep = cep;
-
-            this.Validar();
         }
 
         private void Validar()
