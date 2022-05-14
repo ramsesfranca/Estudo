@@ -1,9 +1,8 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace RF.Estudo.Application.ViewModels
+namespace RF.Estudo.Application.ViewModels.Categoria
 {
-    public class CategoriaViewModel : BaseViewModel<Guid>
+    public class FormularioCategoriaViewModel : BaseViewModel
     {
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public string Nome { get; set; }

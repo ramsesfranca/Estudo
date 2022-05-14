@@ -20,7 +20,7 @@ namespace RF.Estudo.Infrastructure.CrossCutting.IoC
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
 
             // Services
-            services.AddScoped<IProdutoService, ProdutoService>();
+            services.AddScoped<IEstoqueService, EstoqueService>();
 
             // Application
             services.AddScoped<IProdutoApplicationService, ProdutoApplicationService>();

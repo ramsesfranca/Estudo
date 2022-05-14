@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using RF.Estudo.Application.ViewModels;
+using RF.Estudo.Application.ViewModels.Categoria;
 using RF.Estudo.Domain.Entities;
 
 namespace RF.Estudo.Application.Profiles
@@ -8,9 +8,9 @@ namespace RF.Estudo.Application.Profiles
     {
         public CategoriaProfile()
         {
-            this.CreateMap<Categoria, CategoriaViewModel>();
+            this.CreateMap<Categoria, FormularioCategoriaViewModel>();
 
-            this.CreateMap<CategoriaViewModel, Categoria>()
+            this.CreateMap<FormularioCategoriaViewModel, Categoria>()
                 .ConstructUsing(c => new Categoria(c.Nome, c.Descricao));
         }
     }

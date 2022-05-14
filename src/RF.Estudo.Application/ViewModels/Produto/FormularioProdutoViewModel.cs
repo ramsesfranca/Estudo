@@ -1,10 +1,11 @@
-﻿using System;
+﻿using RF.Estudo.Application.ViewModels.Categoria;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace RF.Estudo.Application.ViewModels.Produto
 {
-    public class FormularioProdutoViewModel : BaseViewModel<Guid>
+    public class FormularioProdutoViewModel : BaseViewModel
     {
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public Guid CategoriaId { get; set; }
@@ -40,6 +41,6 @@ namespace RF.Estudo.Application.ViewModels.Produto
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public int Profundidade { get; set; }
 
-        public IEnumerable<CategoriaViewModel> Categorias { get; set; }
+        public IEnumerable<FormularioCategoriaViewModel> Categorias { get; set; }
     }
 }

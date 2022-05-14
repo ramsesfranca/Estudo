@@ -3,10 +3,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace RF.Estudo.Application.ViewModels
 {
-    public class BaseViewModel<TId>
-        where TId : IEquatable<TId>
+    public class BaseViewModel
     {
         [Key]
-        public TId Id { get; set; }
+        public Guid Id { get; }
+
+        protected BaseViewModel()
+        {
+            this.Id = Guid.NewGuid();
+        }
     }
 }

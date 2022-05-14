@@ -22,14 +22,16 @@ namespace RF.Estudo.Infrastructure.Repositorys
 
         public async Task<List<ProdutoDTO>> SelecionarTodosAtivos()
         {
-            return await this._contexto.Set<Produto>().AsNoTracking()
+            return await this._contexto.Set<Produto>().Include("Categoria")
+                                                      .AsNoTracking()
                                                       .Where(p => p.Ativo)
                                                       .OrderBy(p => p.Nome)
                                                       .Select(p => new ProdutoDTO
                                                       {
                                                           Nome = p.Nome,
                                                           Valor = p.Valor,
-                                                          Quantidade = p.Quantidade
+                                                          Quantidade = p.Quantidade,
+                                                          Categoria = p.Categoria.Nome
                                                       }).ToListAsync();
         }
     }

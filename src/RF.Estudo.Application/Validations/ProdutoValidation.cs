@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using RF.Estudo.Domain.Entities;
 
-namespace RF.Estudo.Domain.Validations
+namespace RF.Estudo.Application.Validations
 {
     public class ProdutoValidation : AbstractValidator<Produto>
     {
