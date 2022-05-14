@@ -41,7 +41,7 @@ namespace RF.Estudo.Application.Services
 
             if (await this._produtoRepository.Existe(p => p.Nome == produto.Nome))
             {
-                //Notificar("Já existe um Produto com este nome infomado.");
+                //Notificar("Já existe um Produto com este nome informado.");
                 return;
             }
 
@@ -65,7 +65,7 @@ namespace RF.Estudo.Application.Services
                 if (await this._produtoRepository.Existe(p => p.Nome == produto.Nome &&
                                                               p.Id != produto.Id))
                 {
-                    //Notificar("Já existe um Produto com este nome infomado.");
+                    //Notificar("Já existe um Produto com este nome informado.");
                     return;
                 }
 
