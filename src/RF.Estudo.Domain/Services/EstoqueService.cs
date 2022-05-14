@@ -1,4 +1,5 @@
-﻿using RF.Estudo.Domain.Interfaces.Repositorys;
+﻿using RF.Estudo.Domain.Core.Interfaces.Infrastructure;
+using RF.Estudo.Domain.Interfaces.Repositorys;
 using RF.Estudo.Domain.Interfaces.Services;
 using System;
 using System.Threading.Tasks;
@@ -7,11 +8,13 @@ namespace RF.Estudo.Domain.Services
 {
     public class EstoqueService : IEstoqueService
     {
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IProdutoRepository _produtoRepository;
 
-        public EstoqueService(IProdutoRepository produtoRepository)
+        public EstoqueService(IUnitOfWork unitOfWork, IProdutoRepository produtoRepository)
         {
             this._produtoRepository = produtoRepository;
+            this._unitOfWork = unitOfWork;
         }
 
         public async Task<bool> DebitarEstoque(Guid produtoId, int quantidade)
@@ -37,6 +40,7 @@ namespace RF.Estudo.Domain.Services
             }
 
             this._produtoRepository.Alterar(produto);
+            await this._unitOfWork.Commit();
 
             return true;
         }
@@ -53,6 +57,7 @@ namespace RF.Estudo.Domain.Services
             produto.ReporEstoque(quantidade);
 
             this._produtoRepository.Alterar(produto);
+            await this._unitOfWork.Commit();
 
             return true;
         }

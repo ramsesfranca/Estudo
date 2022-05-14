@@ -20,8 +20,9 @@ namespace RF.Estudo.Application.Services
         private readonly IProdutoRepository _produtoRepository;
         private readonly IEstoqueService _estoqueService;
 
-        public ProdutoApplicationService(IMapper mapper, IUnitOfWork unitOfWork, IProdutoRepository produtoRepository, IEstoqueService estoqueService)
-            : base(mapper, unitOfWork, produtoRepository)
+        public ProdutoApplicationService(IMapper mapper, IUnitOfWork unitOfWork,
+            IProdutoRepository produtoRepository,
+            IEstoqueService estoqueService) : base(mapper, unitOfWork, produtoRepository)
         {
             this._mapper = mapper;
             this._unitOfWork = unitOfWork;

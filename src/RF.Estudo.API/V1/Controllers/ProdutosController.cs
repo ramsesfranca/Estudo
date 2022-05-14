@@ -38,7 +38,7 @@ namespace RF.Estudo.API.V1.Controllers
             return Ok(model);
         }
 
-        [HttpPost]
+        [HttpPost, Route("Inserir")]
         public async Task<ActionResult<FormularioProdutoViewModel>> Inserir(FormularioProdutoViewModel modelo)
         {
             if (!ModelState.IsValid)
@@ -51,7 +51,7 @@ namespace RF.Estudo.API.V1.Controllers
             return Ok(modelo);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("{id}"), ActionName("Atualizar")]
         public async Task<IActionResult> Atualizar(Guid id, FormularioProdutoViewModel modelo)
         {
             if (id != modelo.Id)
@@ -91,6 +91,21 @@ namespace RF.Estudo.API.V1.Controllers
             }
 
             await this._produtoApplicationService.Deletar(modelo);
+
+            return Ok();
+        }
+
+        [HttpPost, Route("AtualizarEstoque")]
+        public async Task<ActionResult<FormularioProdutoViewModel>> AtualizarEstoque(Guid id, int quantidade)
+        {
+            if (quantidade > 0)
+            {
+                await this._produtoApplicationService.ReporEstoque(id, quantidade);
+            }
+            else
+            {
+                await this._produtoApplicationService.DebitarEstoque(id, quantidade);
+            }
 
             return Ok();
         }
