@@ -19,7 +19,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\RF.Estudo.Application\RF.Estudo.Application.csproj" />
-      <ProjectReference Include="..\RF.Estudo.Infrastructure.CrossCutting.IoC\RF.Estudo.Infrastructure.CrossCutting.IoC.csproj" />
+      <ProjectReference Include="..\RF.Estudo.Infrastructure.CrossCutting\RF.Estudo.Infrastructure.CrossCutting.csproj" />
     </ItemGroup>
 
     <ItemGroup>

@@ -8,11 +8,11 @@ using RF.Estudo.Domain.Services;
 using RF.Estudo.Infrastructure.Contexts;
 using RF.Estudo.Infrastructure.Repositorys;
 
-namespace RF.Estudo.Infrastructure.CrossCutting.IoC
+namespace RF.Estudo.Infrastructure.CrossCutting
 {
     public static class IoCConfig
     {
-        public static IServiceCollection ResolveDependencies(this IServiceCollection services)
+        public static IServiceCollection AddServiceDependency(this IServiceCollection services)
         {
             // Data
             services.AddScoped<EstudoContext>();

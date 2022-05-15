@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RF.Estudo.API.Configurations;
-using RF.Estudo.Infrastructure.CrossCutting.IoC;
+using RF.Estudo.Infrastructure.CrossCutting;
 
 namespace RF.Estudo.API
 {
@@ -22,7 +22,7 @@ namespace RF.Estudo.API
             services.AddDbContext(this._configuration);
             services.AddSwaggerConfig();
             services.AddMapperConfig();
-            services.ResolveDependencies();
+            services.AddServiceDependency();
             services.AddControllers();
         }
 

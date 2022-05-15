@@ -19,13 +19,13 @@ namespace RF.Estudo.API.V1.Controllers
             this._produtoApplicationService = produtoApplicationService;
         }
 
-        [HttpGet]
+        [HttpGet, Route("ObterTodosAtivos")]
         public async Task<ActionResult<List<ListaProdutoViewModel>>> ObterTodosAtivos()
         {
             return this.Ok(await this._produtoApplicationService.SelecionarTodosAtivos());
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}"), ActionName("ObterPorId")]
         public async Task<ActionResult<FormularioProdutoViewModel>> ObterPorId(Guid id)
         {
             var model = await this._produtoApplicationService.SelecionarPorId(id);
@@ -80,7 +80,7 @@ namespace RF.Estudo.API.V1.Controllers
             return Ok(modelo);
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}"), ActionName("Deletar")]
         public async Task<ActionResult<FormularioProdutoViewModel>> Deletar(Guid id)
         {
             var modelo = await this._produtoApplicationService.SelecionarPorId(id);

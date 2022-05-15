@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using RF.Estudo.Application.Profiles;
 
-namespace RF.Estudo.API.Configurations
+namespace RF.Estudo.Infrastructure.CrossCutting
 {
     public static class AutoMapperConfig
     {
