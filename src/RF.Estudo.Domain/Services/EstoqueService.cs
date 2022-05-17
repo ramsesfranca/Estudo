@@ -16,9 +16,9 @@ namespace RF.Estudo.Domain.Services
         public EstoqueService(IUnitOfWork unitOfWork, IProdutoRepository produtoRepository,
             IEmailService emailService)
         {
+            this._unitOfWork = unitOfWork;
             this._produtoRepository = produtoRepository;
             this._emailService = emailService;
-            this._unitOfWork = unitOfWork;
         }
 
         public async Task<bool> DebitarEstoque(Guid produtoId, int quantidade)
