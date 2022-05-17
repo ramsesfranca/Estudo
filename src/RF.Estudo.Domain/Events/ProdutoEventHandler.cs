@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace RF.Estudo.Domain.Events
 {
-    public class ProdutoEventHandler
+    public class ProdutoEventHandler //: INotificationHandler<ProdutoAbaixoEstoqueEvent>
     {
         private readonly IProdutoRepository _produtoRepository;
         private readonly IEmailService _emailService;
@@ -21,8 +21,7 @@ namespace RF.Estudo.Domain.Events
         {
             //var produto = await this._produtoRepository.SelecionarPorId(mensagem.AggregateId);
 
-            // Enviar um email para aquisicao de mais produtos.
-            this._emailService.Enviar("test@mail.com", "Confirm", "Register saved.");
+            this._emailService.Enviar("test@mail.com", "Aquisição de mais produtos", "Aquisição de mais produtos.");
         }
     }
 }

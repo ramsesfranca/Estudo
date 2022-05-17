@@ -9,6 +9,5 @@ namespace RF.Estudo.Infrastructure.CrossCutting.Services
             // Enviar e-mail
             return true;
         }
-
     }
 }

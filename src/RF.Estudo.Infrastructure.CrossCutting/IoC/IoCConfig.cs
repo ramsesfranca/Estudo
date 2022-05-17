@@ -32,6 +32,13 @@ namespace RF.Estudo.Infrastructure.CrossCutting.IoC
 
             #endregion
 
+            #region Domain Events
+
+            //services.AddScoped<IMediatorHandler, MediatorHandler>();
+            //services.AddScoped<INotificationHandler<ProdutoAbaixoEstoqueEvent>, ProdutoEventHandler>();
+
+            #endregion
+
             #region Application
 
             services.AddScoped<IProdutoApplicationService, ProdutoApplicationService>();

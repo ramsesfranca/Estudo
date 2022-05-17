@@ -2,11 +2,11 @@
 
 namespace RF.Estudo.Domain.Events
 {
-    public class ProdutoAbaixoEstoqueEvent
+    public class ProdutoAbaixoEstoqueEvent //: DomainEvent
     {
-        public int QuantidadeRestante { get; private set; }
+        public int QuantidadeRestante { get; }
 
-        public ProdutoAbaixoEstoqueEvent(Guid aggregateId, int quantidadeRestante)
+        public ProdutoAbaixoEstoqueEvent(Guid aggregateId, int quantidadeRestante) //: base(aggregateId)
         {
             QuantidadeRestante = quantidadeRestante;
         }

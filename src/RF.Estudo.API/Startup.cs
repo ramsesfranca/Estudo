@@ -7,6 +7,7 @@ using RF.Estudo.API.Configurations;
 using RF.Estudo.Infrastructure.CrossCutting;
 using RF.Estudo.Infrastructure.CrossCutting.IoC;
 using RF.Estudo.Infrastructure.CrossCutting.Mapper;
+using RF.Estudo.Infrastructure.CrossCutting.Mediator;
 
 namespace RF.Estudo.API
 {
@@ -23,8 +24,9 @@ namespace RF.Estudo.API
         {
             services.AddDbContext(this._configuration);
             services.AddSwaggerConfig();
-            services.AddMapperConfig();
             services.AddServiceDependency();
+            services.AddMapperConfig();
+            services.AddMediatorConfig();
             services.AddControllers();
         }
 

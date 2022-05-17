@@ -11,7 +11,6 @@ namespace RF.Estudo.Domain.Services
         private readonly IUnitOfWork _unitOfWork;
         private readonly IProdutoRepository _produtoRepository;
 
-
         public EstoqueService(IUnitOfWork unitOfWork, IProdutoRepository produtoRepository)
         {
             this._unitOfWork = unitOfWork;
@@ -37,7 +36,7 @@ namespace RF.Estudo.Domain.Services
             // TODO: Parametrizar a quantidade de estoque baixo
             if (produto.Quantidade < 10)
             {
-                //await _bus.PublicarEvento(new ProdutoAbaixoEstoqueEvent(produto.Id, produto.Quantidade));
+                //await this._mediatorHandler.PublicarEvento(new ProdutoAbaixoEstoqueEvent(produto.Id, produto.Quantidade));
             }
 
             this._produtoRepository.Alterar(produto);
