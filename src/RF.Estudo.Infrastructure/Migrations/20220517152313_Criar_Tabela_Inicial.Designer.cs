@@ -10,7 +10,7 @@ using RF.Estudo.Infrastructure.Contexts;
 namespace RF.Estudo.Infrastructure.Migrations
 {
     [DbContext(typeof(EstudoContext))]
-    [Migration("20220508142357_Criar_Tabela_Inicial")]
+    [Migration("20220517152313_Criar_Tabela_Inicial")]
     partial class Criar_Tabela_Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,6 +46,8 @@ namespace RF.Estudo.Infrastructure.Migrations
                         .HasColumnType("varchar(250)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Nome");
 
                     b.ToTable("Categorias");
                 });
@@ -94,6 +96,8 @@ namespace RF.Estudo.Infrastructure.Migrations
 
                     b.HasIndex("CategoriaId");
 
+                    b.HasIndex("Nome");
+
                     b.ToTable("Produtos");
                 });
 
@@ -102,7 +106,7 @@ namespace RF.Estudo.Infrastructure.Migrations
                     b.HasOne("RF.Estudo.Domain.Entities.Categoria", "Categoria")
                         .WithMany("Produtos")
                         .HasForeignKey("CategoriaId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.OwnsOne("RF.Estudo.Domain.ValueObjects.Dimensoes", "Dimensoes", b1 =>

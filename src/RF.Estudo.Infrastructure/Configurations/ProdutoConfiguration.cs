@@ -22,6 +22,8 @@ namespace RF.Estudo.Infrastructure.Configurations
                 cm.Property(d => d.Largura).HasColumnName("Largura").HasColumnType("int");
                 cm.Property(d => d.Profundidade).HasColumnName("Profundidade").HasColumnType("int");
             });
+
+            builder.HasIndex(p => p.Nome);
         }
     }
 }

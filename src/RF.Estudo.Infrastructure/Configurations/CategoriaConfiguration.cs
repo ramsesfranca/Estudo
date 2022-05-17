@@ -18,6 +18,8 @@ namespace RF.Estudo.Infrastructure.Configurations
 
             // 1 : N => Categorias : Produtos
             builder.HasMany(c => c.Produtos).WithOne(p => p.Categoria).HasForeignKey(p => p.CategoriaId);
+
+            builder.HasIndex(c => c.Nome);
         }
     }
 }

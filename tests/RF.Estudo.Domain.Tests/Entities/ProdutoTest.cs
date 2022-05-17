@@ -7,7 +7,7 @@ using Xunit;
 
 namespace RF.Estudo.Domain.Tests.Entities
 {
-    public class ProdutoTests
+    public class ProdutoTest
     {
         [Fact]
         public void Produto_Validar_ValidacoesDevemRetornarExceptions()

@@ -20,10 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\src\RF.Estudo.Domain\RF.Estudo.Domain.csproj" />
   </ItemGroup>
 
