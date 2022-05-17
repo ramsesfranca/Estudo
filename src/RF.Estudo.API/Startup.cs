@@ -5,6 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RF.Estudo.API.Configurations;
 using RF.Estudo.Infrastructure.CrossCutting;
+using RF.Estudo.Infrastructure.CrossCutting.IoC;
+using RF.Estudo.Infrastructure.CrossCutting.Mapper;
 
 namespace RF.Estudo.API
 {

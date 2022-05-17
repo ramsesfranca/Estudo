@@ -4,15 +4,15 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace RF.Estudo.Domain.Core.Interfaces.Service.Services
+namespace RF.Estudo.Domain.Core.Interfaces.Infrastructure.Data.Repositorys
 {
-    public interface IBaseService<in TId, TEntidade> : IDisposable
+    public interface IBaseRepository<in TId, TEntidade> : IDisposable
         where TId : IEquatable<TId>
         where TEntidade : BaseEntity<TId>
     {
-        Task Inserir(TEntidade entidade);
-        Task Alterar(TEntidade entidade);
-        Task Deletar(TEntidade entidade);
+        void Inserir(TEntidade entidade);
+        void Alterar(TEntidade entidade);
+        void Deletar(TEntidade entidade);
         Task<TEntidade> SelecionarPorId(TId id, params string[] propriedades);
         Task<IEnumerable<TEntidade>> SelecionarTodos(params string[] propriedades);
         Task<bool> Existe(Expression<Func<TEntidade, bool>> predicado);

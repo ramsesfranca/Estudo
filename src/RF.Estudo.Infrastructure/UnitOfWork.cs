@@ -1,4 +1,4 @@
-﻿using RF.Estudo.Domain.Core.Interfaces.Infrastructure;
+﻿using RF.Estudo.Domain.Core.Interfaces.Infrastructure.Data;
 using RF.Estudo.Infrastructure.Contexts;
 using System;
 using System.Threading.Tasks;

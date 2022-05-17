@@ -2,7 +2,7 @@
 using RF.Estudo.Application.Services.Interfaces;
 using RF.Estudo.Application.ViewModels.Produto;
 using RF.Estudo.Domain.Core.Exceptions;
-using RF.Estudo.Domain.Core.Interfaces.Infrastructure;
+using RF.Estudo.Domain.Core.Interfaces.Infrastructure.Data;
 using RF.Estudo.Domain.Entities;
 using RF.Estudo.Domain.Interfaces.Repositorys;
 using RF.Estudo.Domain.Interfaces.Services;

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RF.Estudo.Domain.Core.DomainObjects;
 using RF.Estudo.Domain.Core.Interfaces;
-using RF.Estudo.Domain.Core.Interfaces.Infrastructure.Repositorys;
+using RF.Estudo.Domain.Core.Interfaces.Infrastructure.Data.Repositorys;
 using RF.Estudo.Infrastructure.Contexts;
 using System;
 using System.Collections.Generic;
