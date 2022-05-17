@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
 using RF.Estudo.Application.Services.Interfaces;
-using RF.Estudo.Application.Validations;
 using RF.Estudo.Application.ViewModels.Produto;
 using RF.Estudo.Domain.Core.Exceptions;
 using RF.Estudo.Domain.Core.Interfaces.Infrastructure;
 using RF.Estudo.Domain.Entities;
 using RF.Estudo.Domain.Interfaces.Repositorys;
 using RF.Estudo.Domain.Interfaces.Services;
+using RF.Estudo.Domain.Validations;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -51,12 +51,11 @@ namespace RF.Estudo.Application.Services
 
         public override async Task Alterar(FormularioProdutoViewModel modelo)
         {
-            var produtoBanco = await this._produtoRepository.SelecionarPorId(modelo.Id);
+            var produto = this._mapper.Map<Produto>(modelo);
+            var produtoBanco = await this._produtoRepository.SelecionarPorId(produto.Id);
 
             if (produtoBanco != null)
             {
-                var produto = this._mapper.Map<Produto>(modelo);
-
                 if (!ExecutarValidacao(new ProdutoValidation(), produto))
                 {
                     return;
