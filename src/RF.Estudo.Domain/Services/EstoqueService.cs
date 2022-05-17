@@ -1,5 +1,4 @@
 ﻿using RF.Estudo.Domain.Core.Interfaces.Infrastructure.Data;
-using RF.Estudo.Domain.Core.Interfaces.Infrastructure.Services;
 using RF.Estudo.Domain.Interfaces.Repositorys;
 using RF.Estudo.Domain.Interfaces.Services;
 using System;
@@ -11,14 +10,12 @@ namespace RF.Estudo.Domain.Services
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IProdutoRepository _produtoRepository;
-        private readonly IEmailService _emailService;
 
-        public EstoqueService(IUnitOfWork unitOfWork, IProdutoRepository produtoRepository,
-            IEmailService emailService)
+
+        public EstoqueService(IUnitOfWork unitOfWork, IProdutoRepository produtoRepository)
         {
             this._unitOfWork = unitOfWork;
             this._produtoRepository = produtoRepository;
-            this._emailService = emailService;
         }
 
         public async Task<bool> DebitarEstoque(Guid produtoId, int quantidade)
@@ -41,7 +38,6 @@ namespace RF.Estudo.Domain.Services
             if (produto.Quantidade < 10)
             {
                 //await _bus.PublicarEvento(new ProdutoAbaixoEstoqueEvent(produto.Id, produto.Quantidade));
-                this._emailService.Enviar("test@mail.com", "Confirm", "Register saved.");
             }
 
             this._produtoRepository.Alterar(produto);
