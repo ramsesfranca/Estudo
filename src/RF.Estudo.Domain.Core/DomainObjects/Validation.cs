@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace RF.Estudo.Domain.Core.DomainObjects
 {
-    public class Validacoes
+    public class Validation
     {
         public static void ValidarSeIgual(object object1, object object2, string mensagem)
         {

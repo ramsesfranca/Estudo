@@ -39,14 +39,14 @@ namespace RF.Estudo.Domain.Entities
 
         public void AlterarNome(string nome)
         {
-            Validacoes.ValidarSeVazio(nome, "O campo Nome do produto não pode estar vazio");
+            Validation.ValidarSeVazio(nome, "O campo Nome do produto não pode estar vazio");
 
             this.Nome = nome;
         }
 
         public void AlterarDescricao(string descricao)
         {
-            Validacoes.ValidarSeVazio(descricao, "O campo Descrição do produto não pode estar vazio");
+            Validation.ValidarSeVazio(descricao, "O campo Descrição do produto não pode estar vazio");
 
             this.Descricao = descricao;
         }
@@ -88,10 +88,10 @@ namespace RF.Estudo.Domain.Entities
 
         private void Validar()
         {
-            Validacoes.ValidarSeVazio(this.Nome, "O campo Nome do produto não pode estar vazio");
-            Validacoes.ValidarSeVazio(this.Descricao, "O campo Descricao do produto não pode estar vazio");
-            Validacoes.ValidarSeMenorQue(this.Valor, 1, "O campo Valor do produto não pode se menor igual a 0");
-            Validacoes.ValidarSeIgual(this.CategoriaId, string.Empty, "A Categoria do produto não pode estar vazio");
+            Validation.ValidarSeVazio(this.Nome, "O campo Nome do produto não pode estar vazio");
+            Validation.ValidarSeVazio(this.Descricao, "O campo Descricao do produto não pode estar vazio");
+            Validation.ValidarSeMenorQue(this.Valor, 1, "O campo Valor do produto não pode se menor igual a 0");
+            Validation.ValidarSeIgual(this.CategoriaId, string.Empty, "A Categoria do produto não pode estar vazio");
         }
     }
 }

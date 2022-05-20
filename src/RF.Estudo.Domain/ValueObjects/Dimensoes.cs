@@ -24,9 +24,9 @@ namespace RF.Estudo.Domain.ValueObjects
 
         private void Validar()
         {
-            Validacoes.ValidarSeMenorQue(this.Altura, 1, "O campo Altura não pode ser menor ou igual a 0");
-            Validacoes.ValidarSeMenorQue(this.Largura, 1, "O campo Largura não pode ser menor ou igual a 0");
-            Validacoes.ValidarSeMenorQue(this.Profundidade, 1, "O campo Profundidade não pode ser menor ou igual a 0");
+            Validation.ValidarSeMenorQue(this.Altura, 1, "O campo Altura não pode ser menor ou igual a 0");
+            Validation.ValidarSeMenorQue(this.Largura, 1, "O campo Largura não pode ser menor ou igual a 0");
+            Validation.ValidarSeMenorQue(this.Profundidade, 1, "O campo Profundidade não pode ser menor ou igual a 0");
         }
     }
 }
